@@ -1,0 +1,23 @@
+package Felter;
+
+import Entity.Spiller;
+
+public class Arbejdslejr extends Ejerskab {
+	
+	private int standardLeje;
+	private int terningSum;
+	
+//	public Arbejdslejr(){
+//		super();
+//	}
+	
+	public Arbejdslejr(String feltType, int pris) {
+		super(feltType, pris);
+		this.standardLeje = 100;
+	}
+	
+	public int getLeje(int terningSum){
+		int antalArbejdslejr = super.getEjer().getAntalArbejdslejre();
+		
+	}
+}
