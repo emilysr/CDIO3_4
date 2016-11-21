@@ -1,6 +1,6 @@
-package Felter;
+package felter;
 
-import Entity.Spiller;
+import entity.Spiller;
 
 public class Flaade extends Ejerskab{
 

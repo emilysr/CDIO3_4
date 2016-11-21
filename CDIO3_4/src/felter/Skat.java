@@ -1,4 +1,4 @@
-package Felter;
+package felter;
 
 public class Skat {
 

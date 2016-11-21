@@ -1,6 +1,6 @@
-package Felter;
+package felter;
 
-import Entity.Spiller;
+import entity.Spiller;
 
 public class Arbejdslejr extends Ejerskab {
 	
@@ -18,6 +18,9 @@ public class Arbejdslejr extends Ejerskab {
 	
 	public int getLeje(int terningSum){
 		int antalArbejdslejr = super.getEjer().getAntalArbejdslejre();
+		int leje = standardLeje * terningSum * antalArbejdslejr;
+		return leje; 
+	
 		
 	}
 }

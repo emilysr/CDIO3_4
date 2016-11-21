@@ -1,8 +1,8 @@
-package Felter;
+package felter;
 
-import Entity.Spiller;
-import Entity.Konto;
-import Entity.Terning;
+import entity.Spiller;
+import entity.Konto;
+import entity.Terning;
 
 public abstract class Felter {
 
