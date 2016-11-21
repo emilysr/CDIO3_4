@@ -16,7 +16,6 @@ public abstract class Felter {
 		return feltType;
 	}
 	
-	public abstract int getleje();
 	
 	abstract public void landPaaFelt (Spiller spiller);
 }

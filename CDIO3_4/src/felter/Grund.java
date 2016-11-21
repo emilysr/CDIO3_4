@@ -10,6 +10,17 @@ public class Grund extends Ejerskab {
 		super(felttype, pris);
 		this.leje = leje;
 	}
+	
+	
+
+	@Override
+	public int getLeje() {
+		return leje;
+	}
+
+	@Override
+	public void landPaaFelt(Spiller spiller) {
+	}
 
 	
 }

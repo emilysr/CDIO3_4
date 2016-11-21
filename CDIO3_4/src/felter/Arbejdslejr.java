@@ -23,4 +23,20 @@ public class Arbejdslejr extends Ejerskab {
 	
 		
 	}
+	
+	public void koebFelt (Spiller spiller) {
+		super.koebFelt(spiller);
+		spiller.setAntalArbejdslejr();
+	}
+
+
+	@Override
+	public int getLeje() {
+		return 0;
+	}
+
+	@Override
+	public void landPaaFelt(Spiller spiller) {
+		
+	}
 }

@@ -44,6 +44,11 @@ public class Flaade extends Ejerskab{
 
 	}
 
+	public void koebFelt (Spiller spiller) {
+		super.koebFelt(spiller);
+		spiller.setAntalFlaade();
+	}
+
 
 
 }
