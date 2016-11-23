@@ -6,10 +6,11 @@ public class Spiller {
 	private int antalFlaade; 
 	private int antalArbejdslejre;
 	private String navn = ""; 
+	Konto konto = new Konto();
 	
 	public Spiller () {
 		
-		Konto konto = new Konto();
+		konto = new Konto();
 		position = 0;
 		antalFlaade = 0; 
 		antalArbejdslejre = 0; 

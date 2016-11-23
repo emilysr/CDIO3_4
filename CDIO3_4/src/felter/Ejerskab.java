@@ -6,7 +6,6 @@ public abstract class Ejerskab extends Felter {
 
 	private int pris;
 	private Spiller ejer;
-//	private Spiller 
 	
 	public Ejerskab(String feltType, int pris) {
 		super(feltType);

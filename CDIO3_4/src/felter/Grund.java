@@ -10,8 +10,6 @@ public class Grund extends Ejerskab {
 		super(felttype, pris);
 		this.leje = leje;
 	}
-	
-	
 
 	@Override
 	public int getLeje() {
