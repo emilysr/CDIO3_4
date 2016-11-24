@@ -16,9 +16,9 @@ public abstract class Ejerskab extends Felter {
 	public abstract int getLeje();
 	
 	public boolean alleredeEjet() {
-		if (ejer == null)
+		if (ejer == null) // Ikke ejet = false
 			return false;
-		return true;
+		return true; // Ejet = true
 	}
 	
 	public Spiller getEjer () {

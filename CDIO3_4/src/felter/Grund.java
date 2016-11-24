@@ -18,6 +18,7 @@ public class Grund extends Ejerskab {
 
 	@Override
 	public void landPaaFelt(Spiller spiller) {
+		
 	}
 
 	

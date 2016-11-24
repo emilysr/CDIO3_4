@@ -40,7 +40,7 @@ public class Flaade extends Ejerskab{
 
 	@Override
 	public void landPaaFelt(Spiller spiller) {
-		// TODO Auto-generated method stub
+		
 
 	}
 

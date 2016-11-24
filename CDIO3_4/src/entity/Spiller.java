@@ -8,6 +8,7 @@ public class Spiller {
 	private String navn = ""; 
 	Konto konto = new Konto();
 	
+
 	public Spiller () {
 		
 		konto = new Konto();
@@ -55,4 +56,9 @@ public class Spiller {
 	public int getAntalArbejdslejre () {
 		return antalArbejdslejre;
 	}
+	
+	public Konto getKonto() {
+		return konto;
+	}
+	
 }
