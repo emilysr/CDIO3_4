@@ -19,6 +19,7 @@ public class Spil {
 	Spilleplade plade = new Spilleplade();
 
 
+	// Spillerantal og navne
 	public void setSpillerAntal () {
 		do {
 			antalSp = scan.nextInt();
@@ -30,22 +31,22 @@ public class Spil {
 				
 				}
 
-			};
+			}
 			// teskst 
 		} while (antalSp < 2 || antalSp > 6);
 
 
 	}
 
-
-	public int getSpillerAntal () {  	// Henter spiller antal
+	// Henter spiller antal
+	public int getSpillerAntal () {  
 		return antalSp;
 	}
 
 
-	public void runSpil () {    // Sætter spillet igang
+	// Kører spil
+	public void runSpil () {   
 		setSpillerAntal();
-		System.out.println(plade.toString());
 
 
 		while (getSpillerAntal() != 1 ) {
@@ -76,18 +77,15 @@ public class Spil {
 			Ejerskab ejerFelt = (Ejerskab) felt;
 
 		if(i.getKonto().pengeNok(ejerFelt.getPris()))
-			//tekst
+			//tekst Vil du købe feltet?
 			if(!ejerFelt.alleredeEjet()){
+				
 				String svar = scan.next();
 				if(svar.equalsIgnoreCase("n")) // GUIen erstater dette input
 					return;
 				else 
 					ejerFelt.koebFelt(i); //misvisende men passer!
 				
-
-//				if (i.getKonto().pengeNok(ejerFelt.getPris())){
-//					// Vil du købe feltet?
-//				}
 //
 //			}else{
 //				// spiller balance - feltafgift (eventuelt noget hvis der ejes flere felter) 
