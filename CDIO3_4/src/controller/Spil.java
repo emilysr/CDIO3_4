@@ -12,6 +12,7 @@ public class Spil {
 	// Initialiseringer
 	int antalSp; 
 	int tur = 0;
+	Konto konto = new Konto();
 	Terning terning = new Terning (); 
 	ArrayList <Spiller> spillere = new ArrayList <Spiller> ();
 	Scanner scan = new Scanner(System.in);
@@ -47,20 +48,22 @@ public class Spil {
 		System.out.println(plade.toString());
 
 
-
-		//spilTur();
-
-
-		while (true) {
+		while (getSpillerAntal() != 1 ) {
 			skiftTur();
 		}
+		// Hvilken spiller vandt?
+		
 	}
 
 	public void skiftTur() {
-
+		for (int j = 0; j < getSpillerAntal(); j++) {
+			//spilTur(j);
+		}
 
 
 	}
+	
+	
 
 	public void spilTur(Spiller i) {
 
@@ -72,35 +75,38 @@ public class Spil {
 		if (felt instanceof Ejerskab) {                               // Hvis feltet er den del af ejerskab, skal dette udføres
 			Ejerskab ejerFelt = (Ejerskab) felt;
 
+		if(i.getKonto().pengeNok(ejerFelt.getPris()))
+			//tekst
 			if(!ejerFelt.alleredeEjet()){
-				// Mulighed for at købe 
+				String svar = scan.next();
+				if(svar.equalsIgnoreCase("n")) // GUIen erstater dette input
+					return;
+				else 
+					ejerFelt.koebFelt(i); //misvisende men passer!
+				
 
-				if (i.getKonto().pengeNok(ejerFelt.getPris())){
-					// Vil du købe feltet?
-				}
-
-			}else{
-				// spiller balance - feltafgift (eventuelt noget hvis der ejes flere felter) 
-				// Hvis der er en ejer, betal leje . Eller få af banken hvis Helle
-			}
+//				if (i.getKonto().pengeNok(ejerFelt.getPris())){
+//					// Vil du købe feltet?
+//				}
+//
+//			}else{
+//				// spiller balance - feltafgift (eventuelt noget hvis der ejes flere felter) 
+//				// Hvis der er en ejer, betal leje . 
+//			}
 		}
 
 		//Tjek for om spilleren taber
+		if(konto.tjekBankerot() == true)
+			ejerFelt.nulstilEjerskab(); 	//smide ud og nulstil felter.
+		
 
 
-
-
-		//	public void skiftTur () {
-		//			do {
-		//				tur = (tur + 1) % spiller.length
-		//			}
-		//	}
 
 	//	if (konto.tjekBankerot == true) { // Tjek wincondition
 			//Print du har vundet
-
-			System.exit(0);
 		}
+			System.exit(0);
+		
 
 	
 
