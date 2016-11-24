@@ -26,7 +26,7 @@ public abstract class Ejerskab extends Felter {
 	}
 	
 	public void nulstilEjerskab () {
-		for (int i=1; i<22; i++) {  //for() Skal løbe alle felterne igennem og nulstille spilleren felter
+		for (int i=1; i<22; i++) {  //for() Skal løbe alle felterne igennem og nulstille spillerens felter
 			ejer = null; 
 		}
 		

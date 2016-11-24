@@ -53,12 +53,12 @@ public class Spil {
 			skiftTur();
 		}
 		// Hvilken spiller vandt?
-		
+		spillere.get(0);
 	}
 
 	public void skiftTur() {
 		for (int j = 0; j < getSpillerAntal(); j++) {
-			//spilTur(j);
+			spilTur(j);
 		}
 
 
@@ -103,7 +103,7 @@ public class Spil {
 	//	if (konto.tjekBankerot == true) { // Tjek wincondition
 			//Print du har vundet
 		}
-			System.exit(0);
+			//System.exit(0);
 		
 
 	
