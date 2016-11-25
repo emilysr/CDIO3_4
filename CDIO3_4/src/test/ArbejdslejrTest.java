@@ -68,8 +68,8 @@ public class ArbejdslejrTest {
 		Sp1Reel = this.spiller.getBalance();
 		Assert.assertEquals(Sp1Expected, Sp1Reel);
 
-		this.arbejdslejr2.landPaaFelt(spiller2);
-		Sp2Expected -= this.arbejdslejr.getLeje(7);
+		this.arbejdslejr.landPaaFelt(spiller2);
+		Sp2Expected -= this.arbejdslejr.getLeje();
 		Sp2Reel = this.spiller2.getBalance();
 		Assert.assertEquals(Sp2Expected, Sp2Reel);
 
@@ -94,7 +94,7 @@ public class ArbejdslejrTest {
 		Assert.assertEquals(Sp1Expected, Sp1Reel);
 
 		this.arbejdslejr2.landPaaFelt(spiller2);
-		Sp2Expected -= this.arbejdslejr.getLeje(7);
+		Sp2Expected -= this.arbejdslejr.getLeje();
 		Sp2Reel = this.spiller2.getBalance();
 		Assert.assertEquals(Sp2Expected, Sp2Reel);
 
