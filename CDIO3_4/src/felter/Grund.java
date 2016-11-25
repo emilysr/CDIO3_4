@@ -35,6 +35,9 @@ public class Grund extends Ejerskab {
 	}
 
 // Landpåfelt metoden, gør alt hvad der sker når en spiller lander på feltet
+// Ser hvorvidt om feltet ejes, hvis ikke ser om spilleren har råd, hvis ja giver muligheden for at købe feltet
+// Hvis feltet ejes ser metoden om det er spilleren selv der ejer feltet eller en anden spiller.
+// hvis det er en anden trækkes lejen fra spillerens konto og samme beløb lægges ind på ejerens konto
 // Er ikke laver efter GRASP på grund af tidspress
 	@Override
 	public void landPaaFelt(Spiller spiller, Mui mui) {
