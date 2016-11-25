@@ -6,12 +6,22 @@ public class Spiller {
 	private int antalFlaade; 
 	private int antalArbejdslejre;
 	private String navn = ""; 
-	Konto konto = new Konto();
+	private Konto konto;
+	private boolean bankerot = false;
 	
+	
+	
+	public Konto getKonto() {
+		return konto;
+	}
+
+	public void setKonto(Konto konto) {
+		this.konto = konto;
+	}
 
 	public Spiller () {
 		
-		konto = new Konto();
+		this.konto = new Konto();
 		position = 0;
 		antalFlaade = 0; 
 		antalArbejdslejre = 0; 
@@ -33,11 +43,11 @@ public class Spiller {
 		return position;
 	}
 	
-	public void aendreBalance (int værdi){
-		konto.aendreBalance(værdi);
+	public void aendreBalance (int vaerdi){
+		konto.aendreBalance(vaerdi);
 	}
 	
-	public int getBalance () {
+	public int getBalance() {
 		return konto.getBalance();
 	}
 	
@@ -57,8 +67,13 @@ public class Spiller {
 		return antalArbejdslejre;
 	}
 	
-	public Konto getKonto() {
-		return konto;
+	public boolean getBankerot(){
+		return bankerot;
 	}
 	
+	public void bankerot(int balance){
+		if(balance < 0){
+			this.bankerot = true;
+		}
+	}
 }
