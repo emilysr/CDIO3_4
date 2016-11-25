@@ -1,11 +1,12 @@
 package felter;
 
+import desktop_resources.GUI;
 import entity.Spiller;
 
 public abstract class Ejerskab extends Felter {
 
 	private int pris;
-	private Spiller ejer;
+	protected Spiller ejer;
 	
 	public Ejerskab(String feltType, int pris) {
 		super(feltType);
@@ -16,20 +17,13 @@ public abstract class Ejerskab extends Felter {
 	public abstract int getLeje();
 	
 	public boolean alleredeEjet() {
-		if (ejer == null) // Hvis der ingen ejer er = false
+		if (ejer == null)
 			return false;
-		return true; // Ejet = true
+		return true;
 	}
 	
 	public Spiller getEjer () {
 		return ejer;
-	}
-	
-	public void nulstilEjerskab () {
-		for (int i=1; i<22; i++) {  //for() Skal løbe alle felterne igennem og nulstille spillerens felter
-			ejer = null; 
-		}
-		
 	}
 	
 	public int getPris(){
@@ -39,7 +33,13 @@ public abstract class Ejerskab extends Felter {
 	public void koebFelt (Spiller spiller) {
 		ejer = spiller;
 		ejer.aendreBalance(-pris);
+		GUI.setHouses(spiller.getPosition()+1, 1);
+		GUI.setOwner(spiller.getPosition()+1, spiller.getNavn());
 		}
-		
+	
+	public void nulstilEjerskab () {
+			ejer = null; 
+		}
+	
 	}
 
