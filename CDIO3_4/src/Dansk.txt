@@ -1,0 +1,77 @@
+Velkommen til Bankerot
+I dette spil vil der være mellem 2-6 spillere
+Hvad hedder spiller 
+Hvor mange spillere skal der være med?
+Forkert antal spillere
+Du har en pengebeholdning på:
+Videre
+Spiller
+Du landte på felt nummer
+ fik sin pengebeholdning ændret med 
+'s pengebeholdning er blevet ændret
+ Vil blive trukket fra din pengebeholdning
+Der er mulighed for at købe feltet?
+Vil du gerne købe dette felt?
+ Din pengebeholdning er nu på:
+Dette felt ejer du allerede
+Feltet ejes af en anden
+Feltets ejer er
+Ja
+Nej
+Du har ikke råd til at købe dette felt
+Tryk 'Videre' for at fortsætte
+Indtastningen er ugyldig. Prøv igen
+Du er lander på felt 17
+Her har du muligheden for at betale 4000 i skat
+eller 10 % af din samlede formue i skat
+Hvad vælger du? 
+Du valgte at betale 4000 i skat
+Du valgte at betale 10 % af din formue i skat
+10 % af din formue er 
+Det valgte navn er allerede taget
+Du skal slå med terningerne 
+og betale øjenværdien * 100
+* antal Arbejdslejre eget af samme spiller
+Beløbet blev 
+Du er landet på en grund
+Du er landet på et skatte felt
+Du er landet i en arbejdslejre
+Du er landet på flåden
+felt nr. 
+Start
+Stammelejr
+Krater
+Bjerg
+Kold oerken
+Sort grotte
+Vareulvemuren
+Bjerg landsbyen
+Sydlige citadel
+Palads porten
+Taarn
+Slot
+Indhegnede by
+Kloster
+Hytter i bjergene
+Pitten
+Guldmine
+Karavane
+Anden Sejl
+Havets Grover
+de Buccaneers
+Privateer armade
+100 x Terning slag x Spillerejet
+4000 eller 10 % 
+2000 
+Type: Grund 
+Prisen er 
+Lejen er 
+Type: Flaade 
+Type: Helle 
+Type: Skat 
+Type: Arbejdslejr 
+Lejen afhaenger af antallet flaade felter ejeren har
+Skaten er 
+Du modtog 
+Du har købt feltet
+Du valgte ikke at købe feltet

@@ -1,0 +1,77 @@
+Welcome to bankruptcy
+This game will consist of 2 - 6 players
+What the name of player
+Choose the amount of players?
+Invalid number of players
+Your balance is 
+Continue
+Player
+You landed on field 
+ balance has been change with
+ 's balance has been changed
+ will be drawn from your balance
+You have the option of buyin this field
+Do you want to buy this field? 
+Your balance is now 
+You already own this field
+This field is already owned by another player
+The field belongs to 
+Yes
+No
+You cant afford to buy this field
+Press 'continue' to continue
+The entry was invalid, try again
+You have landed on field 17
+You have two options: pay 4000 in tax
+or 10 % of your total assets
+what do you choose?
+You choose to pay 4000 in tax
+You choose to pay 10 % of your assets in tax
+10 % of your assets is 
+That name is taken
+On this field you will have to roll the dice
+You will pay 100 times the eyes
+times the amount of Labor camps own by the same player
+Bel�bet blev
+You landed on a Territory
+You landed on a Tax field
+You landed on a Labor camp
+You landed on a fleet field
+field nr.
+Start
+Tribe Encampment
+Crater
+Mountain
+Cold Desert
+Black cave
+The Werewall
+Mountain village
+South Citadel
+Palace gates
+Tower
+Castle
+Walled City
+Monastery
+Huts in the mountain
+The pit
+Goldmine
+Caravan
+Secound sail
+Sea Grover
+The Buccaneers
+Privateer armade
+100 x dice x Playerowned
+4000 or 10 %
+2000
+Type: Territory 
+Price: 
+Rent: 
+Type: Fleet 
+Type: Refuge 
+Type: Tax 
+Type: Labor camp 
+The rent depends on the amount of Fleet fields the owner has
+The tax is 
+You recieved  
+You bought this field
+You choose not to buy the field
