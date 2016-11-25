@@ -58,7 +58,7 @@ public class Spil {
 
 	public void skiftTur() {
 		for (int j = 0; j < getSpillerAntal(); j++) {
-			spilTur(j);
+		//	spilTur(j);
 		}
 
 
@@ -77,9 +77,8 @@ public class Spil {
 			Ejerskab ejerFelt = (Ejerskab) felt;
 
 		if(i.getKonto().pengeNok(ejerFelt.getPris()))
-			//tekst Vil du købe feltet?
 			if(!ejerFelt.alleredeEjet()){
-				
+				//tekst Vil du købe feltet? 
 				String svar = scan.next();
 				if(svar.equalsIgnoreCase("n")) // GUIen erstater dette input
 					return;

@@ -18,4 +18,6 @@ public abstract class Felter {
 	
 	
 	abstract public void landPaaFelt (Spiller spiller);
+	
+	
 }
