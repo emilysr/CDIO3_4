@@ -7,12 +7,14 @@ import entity.Mui;
 import entity.Spiller;
 import sprog.Tekst;
 
+// Grund feltet, arver fra ejerskab
 public class Grund extends Ejerskab {
 
 	private int leje;
 	private int pris;
 	private Color farve;
 	
+// Konstruktør
 	public Grund(String felttype, int pris, int leje) {
 		super(felttype, pris);
 		this.leje = leje;
@@ -21,15 +23,19 @@ public class Grund extends Ejerskab {
 		
 	}
 	
+// Metode der retunere prisen
 	public int getPris() {
 		return pris;
 	}
 
+// metode der retunere lejen
 	@Override
 	public int getLeje() {
 		return leje;
 	}
 
+// Landpåfelt metoden, gør alt hvad der sker når en spiller lander på feltet
+// Er ikke laver efter GRASP på grund af tidspress
 	@Override
 	public void landPaaFelt(Spiller spiller, Mui mui) {
 			mui.midtBeskrivelse(Tekst.toString(36));
@@ -62,19 +68,20 @@ public class Grund extends Ejerskab {
 				}}}
 
 
+// anvendes i gui
 	@Override
 	public String subtekst() {
 		String substekst = "" + getPris();
 		return substekst.toString();
 	}
-
+// anvendes i gui
 	@Override
 	public Color getColor()
 	{
 		return farve;
 	}
 
-
+// anvendes i gui
 	@Override
 	public String getbeskrivelse() {
 		// TODO Auto-generated method stub
