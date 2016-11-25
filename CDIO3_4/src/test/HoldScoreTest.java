@@ -5,9 +5,6 @@ import org.junit.Test;
 
 public class HoldScoreTest {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+
 
 }
