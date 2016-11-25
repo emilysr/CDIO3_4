@@ -17,6 +17,7 @@ public class Spilleplade {
 		return plade;
 	}
 	
+	// Liste af alle felter
 	public Spilleplade  (){
 		plade[0] = new Start(Tekst.toString(41)); 
 		plade[1] = new Grund(Tekst.toString(42),1000, 100);
