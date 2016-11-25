@@ -4,6 +4,7 @@ public class Konto {
 
 	private int balance;
 	
+	// Sætter spillerens startkonto til at være på 30000
 	public Konto () {
 		balance = 30000;
 	}
@@ -28,6 +29,7 @@ public class Konto {
 		return ("" + getBalance());
 	}
 	
+	// Tester for bankerot ved at se om spillerens balance er under 0
 	public boolean tjekBankerot () {
 		if (balance < 0)
 			return true;
@@ -35,6 +37,7 @@ public class Konto {
 			return false; 
 	}
 	
+	// Tjekker om spilleren har penge nok til at købe feltet, ved at se om balancen er større end prisen på feltet
 	public boolean pengeNok(int pris){
 		if (balance >= pris)
 			return true;

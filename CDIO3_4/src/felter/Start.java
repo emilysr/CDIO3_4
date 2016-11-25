@@ -5,6 +5,8 @@ import java.awt.Color;
 import entity.Mui;
 import entity.Spiller;
 
+// Feltet er et start felt og derfor skal den ikke gøre noget
+// Alle metoder er autogeneret
 public class Start extends Felter{
 
 	
