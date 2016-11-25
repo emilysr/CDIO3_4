@@ -11,6 +11,7 @@ import sprog.Tekst;
 
 public class Spil {
 	
+// Konstruere en ny Mui
 	Mui mui = new Mui();
 
 	int antalSp; 
@@ -53,31 +54,37 @@ public class Spil {
 	// Kører spil
 	public void runSpil () {
 		
+		// Vælg sprog inden spillet kan begynde
 		System.out.println("Vælg sprog/Choose language");
 		System.out.println("Dansk/English");
 		
 		Tekst.vaelgsprog(scan.next());
 				
+		// Tilføjer alle spiller med navn
 		setSpillerAntal();
 		
+		// printer gui brættet
 		Spilleplade braet = new Spilleplade();
 		mui.lavbraet(braet);
 		
-		
+		// printer spillerne i guien
 		for(int i = 0 ; i < antalSp ; i++){
 			mui.addSpiller(spiller.get(i));
 			mui.setPaaStart(spiller.get(i));
 		}
 
+		// spillet fortsætter så længe ingen har vundet
 		while (findVinder(antalSp) == false){
 
 			skiftTur();
 		}
 		
+		// printer vinderen
 		mui.midtBeskrivelse(Tekst.toString(83) + getVinder());
 		
 	}
 
+	// skifter tur mellem alle spillere, men springer spillere over der er gået bankerot
 	public void skiftTur() {
 		
 		for (int j = 0; j < getSpillerAntal(); j++) {
@@ -90,8 +97,10 @@ public class Spil {
 
 	}
 	
+	// Spiller en spillers tur
 	public  void spilTur(Spiller spiller) {
 
+		// angiver en spiller har fået en tur
 		mui.getEnKnap(Tekst.toString(22), Tekst.toString(7));
 		
 		terning.roll();
@@ -100,22 +109,22 @@ public class Spil {
 		
 		int nytfelt = (spiller.getPosition()+slag)%plade.getPlade().length;  // Spilleren rykker rundt på pladen
 		
-		spiller.setPosition(nytfelt);             							// Spilleren lander på felt
+		spiller.setPosition(nytfelt);             			// Spilleren lander på felt
 		
-		mui.spilTur(spiller, nytfelt, terning.getDice1(), terning.getDice2());
+		mui.spilTur(spiller, nytfelt, terning.getDice1(), terning.getDice2()); // printer turen i guien
 		
 		Felter felt = plade.getPlade() [nytfelt];
 		
-		felt.landPaaFelt(spiller,mui);
+		felt.landPaaFelt(spiller,mui);		// landpåfelt metoden kaldt for feltet
 		
-		spiller.bankerot(spiller.getBalance());
+		spiller.bankerot(spiller.getBalance()); // er spilleren bankerot?
 		
-		fjernEjer(spiller.getBankerot(), spiller);
+		fjernEjer(spiller.getBankerot(), spiller); // hvis bankerot - fjern spiller
 		
 		
 	}
 		
-		
+	// finder en vinder hvis der kun er en spiller som ikke er bankerot
 	
 	public boolean findVinder(int antalSp){
 		int spillere = 0;
@@ -130,6 +139,8 @@ public class Spil {
 		return vinder;
 		}
 	
+	// printer vinderen
+	
 	public String getVinder(){
 			String vinder = "";
 				for(int j = 0 ; j < antalSp ; j++){
@@ -140,6 +151,7 @@ public class Spil {
 		return vinder;
 	}
 	
+	// fjerner en spiller i guien, og sætter balance til 0 og fjerner huse og grænse farver
 	public void fjernEjer(boolean bankerot, Spiller spiller){
 		if(bankerot == true){
 			for( int i = 0 ; i < 22 ; i++){
