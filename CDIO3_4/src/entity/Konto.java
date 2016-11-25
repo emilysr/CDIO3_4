@@ -12,8 +12,12 @@ public class Konto {
 		this.balance = balance;
 	}
 	
-	public void aendreBalance (int vaerdi) {
-		this.balance = balance + vaerdi;
+	public void setBalanceNul(){
+		balance = 0;
+	}
+	
+	public void aendreBalance (int værdi) {
+		this.balance = this.balance + værdi;
 	}
 	
 	public int getBalance () {
