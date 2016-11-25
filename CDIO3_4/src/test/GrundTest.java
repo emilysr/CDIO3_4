@@ -46,9 +46,9 @@ public class GrundTest {
 	public void notNulltest() {
 		Assert.assertNotNull(this.spiller);
       	
-      	Assert.assertNotNull(this.grund);
+      		Assert.assertNotNull(this.grund);
       	
-      	Assert.assertTrue(this.grund instanceof Grund);
+      		Assert.assertTrue(this.grund instanceof Grund);
 	}
 	
 	
