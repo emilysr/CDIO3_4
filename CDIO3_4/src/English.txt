@@ -10,7 +10,7 @@ You landed on field
  balance has been change with
  's balance has been changed
  will be drawn from your balance
-You have the option of buyin this field
+You have the option of buying this field
 Do you want to buy this field? 
 Your balance is now 
 You already own this field
@@ -18,7 +18,7 @@ This field is already owned by another player
 The field belongs to 
 Yes
 No
-You cant afford to buy this field
+You can't afford to buy this field
 Press 'continue' to continue
 The entry was invalid, try again
 You have landed on field 17
@@ -32,7 +32,7 @@ That name is taken
 On this field you will have to roll the dice
 You will pay 100 times the eyes
 times the amount of Labor camps own by the same player
-Bel�bet blev
+the amount is
 You landed on a Territory
 You landed on a Tax field
 You landed on a Labor camp
@@ -60,7 +60,7 @@ Secound sail
 Sea Grover
 The Buccaneers
 Privateer armade
-100 x dice x Playerowned
+100 x dice x Playerowned = 
 4000 or 10 %
 2000
 Type: Territory 
@@ -75,3 +75,9 @@ The tax is
 You recieved  
 You bought this field
 You choose not to buy the field
+You landed on a refuge field
+Accept
+You have to pay 2000 in tax
+Roll
+Roll the dice
+The Winner is: 
