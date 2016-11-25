@@ -3,38 +3,44 @@ package controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import desktop_codebehind.Player;
 import entity.*;
 import felter.Ejerskab;
 import felter.Felter;
+import sprog.Tekst;
 
 public class Spil {
+	
+	Mui mui = new Mui();
 
-	// Initialiseringer
 	int antalSp; 
 	int tur = 0;
 	Konto konto = new Konto();
 	Terning terning = new Terning (); 
-	ArrayList <Spiller> spillere = new ArrayList <Spiller> ();
+	ArrayList <Spiller> spiller = new ArrayList <Spiller> ();
 	Scanner scan = new Scanner(System.in);
 	Spilleplade plade = new Spilleplade();
 
 
 	// Spillerantal og navne
 	public void setSpillerAntal () {
+			System.out.println(Tekst.toString(1));
+			System.out.println(Tekst.toString(2));
+			System.out.println(Tekst.toString(4));
 		do {
-			antalSp = scan.nextInt();
-			if (antalSp > 1 && antalSp < 7){ // Antal spillere mellem 2 og 6
-				for (int i=0; i< antalSp; i++) { //Første spillers index er 0
+			this.antalSp = scan.nextInt();
+			if (antalSp < 2 | antalSp > 6) // Antal spillere mellem 2 og 6
+				System.out.println(Tekst.toString(5));
+			
+			} while (antalSp < 2 || antalSp > 6);
+			
+			for (int i=0; i< antalSp; i++) { //Første spillers index er 0
+					System.out.println(Tekst.toString(3) + (i+1));
 					String navn = scan.next(); // Scanner for navn
-					spillere.add(new Spiller ()); // Tilføjer spiller
-					spillere.get(i).setNavn(navn); 
+					spiller.add(new Spiller ()); // Tilføjer spiller
+					spiller.get(i).setNavn(navn); 
 				
 				}
-
-			}
-			// teskst 
-		} while (antalSp < 2 || antalSp > 6);
-
 
 	}
 
@@ -45,67 +51,108 @@ public class Spil {
 
 
 	// Kører spil
-	public void runSpil () {   
+	public void runSpil () {
+		
+		System.out.println("Vælg sprog/Choose language");
+		System.out.println("Dansk/English");
+		
+		Tekst.vaelgsprog(scan.next());
+				
 		setSpillerAntal();
+		
+		Spilleplade braet = new Spilleplade();
+		mui.lavbraet(braet);
+		
+		
+		for(int i = 0 ; i < antalSp ; i++){
+			mui.addSpiller(spiller.get(i));
+			mui.setPaaStart(spiller.get(i));
+		}
 
+		while (findVinder(antalSp) == false){
 
-		while (getSpillerAntal() != 1 ) {
 			skiftTur();
 		}
-		// Hvilken spiller vandt?
-		spillere.get(0);
+		
+		mui.midtBeskrivelse(Tekst.toString(83) + getVinder());
+		
 	}
 
 	public void skiftTur() {
+		
 		for (int j = 0; j < getSpillerAntal(); j++) {
-		//	spilTur(j);
+			if(spiller.get(j).getBankerot() == false){
+			spilTur(spiller.get(j));
+			}
+		
+		
 		}
-
 
 	}
 	
-	
+	public  void spilTur(Spiller spiller) {
 
-	public void spilTur(Spiller i) {
-
+		mui.getEnKnap(Tekst.toString(22), Tekst.toString(7));
+		
 		terning.roll();
+		
 		int slag = terning.getFaceValue();                             // Får terningværdi
-		int nytfelt = (i.getPosition()+slag)%plade.getPlade().length;  // Spilleren rykker rundt på pladen
-		i.setPosition(nytfelt);                                        // Spilleren lander på felt
+		
+		int nytfelt = (spiller.getPosition()+slag)%plade.getPlade().length;  // Spilleren rykker rundt på pladen
+		
+		spiller.setPosition(nytfelt);             							// Spilleren lander på felt
+		
+		mui.spilTur(spiller, nytfelt, terning.getDice1(), terning.getDice2());
+		
 		Felter felt = plade.getPlade() [nytfelt];
-		if (felt instanceof Ejerskab) {                               // Hvis feltet er den del af ejerskab, skal dette udføres
-			Ejerskab ejerFelt = (Ejerskab) felt;
-
-		if(i.getKonto().pengeNok(ejerFelt.getPris()))
-			if(!ejerFelt.alleredeEjet()){
-				//tekst Vil du købe feltet? 
-				String svar = scan.next();
-				if(svar.equalsIgnoreCase("n")) // GUIen erstater dette input
-					return;
-				else 
-					ejerFelt.koebFelt(i); //misvisende men passer!
-				
-//
-//			}else{
-//				// spiller balance - feltafgift (eventuelt noget hvis der ejes flere felter) 
-//				// Hvis der er en ejer, betal leje . 
-//			}
-		}
-
-		//Tjek for om spilleren taber
-		if(konto.tjekBankerot() == true)
-			ejerFelt.nulstilEjerskab(); 	//smide ud og nulstil felter.
 		
-
-
-
-	//	if (konto.tjekBankerot == true) { // Tjek wincondition
-			//Print du har vundet
-		}
-			//System.exit(0);
+		felt.landPaaFelt(spiller,mui);
 		
-
-	
-
+		spiller.bankerot(spiller.getBalance());
+		
+		fjernEjer(spiller.getBankerot(), spiller);
+		
+		
 	}
-}
+		
+		
+	
+	public boolean findVinder(int antalSp){
+		int spillere = 0;
+		boolean vinder = false;
+		for(int i = 0 ; i < antalSp ; i++){
+			if(spiller.get(i).getBankerot() == false){
+				spillere++;
+			}}
+			if(spillere == 1){
+				vinder = true;
+		}
+		return vinder;
+		}
+	
+	public String getVinder(){
+			String vinder = "";
+				for(int j = 0 ; j < antalSp ; j++){
+					if(spiller.get(j).getBankerot() == false){
+						vinder = spiller.get(j).getNavn();
+					}
+				}
+		return vinder;
+	}
+	
+	public void fjernEjer(boolean bankerot, Spiller spiller){
+		if(bankerot == true){
+			for( int i = 0 ; i < 22 ; i++){
+			if ( plade.getFelt(i) instanceof Ejerskab){
+				if(((Ejerskab) plade.getFelt(i)).getEjer() == spiller)
+			((Ejerskab) plade.getFelt(i)).nulstilEjerskab(); 
+				mui.fjernEjer(i);
+			}
+		}
+			mui.fjernBiler(spiller);
+			spiller.getKonto().setBalanceNul();
+			mui.getBalance(spiller);
+			
+			
+	}
+}}
