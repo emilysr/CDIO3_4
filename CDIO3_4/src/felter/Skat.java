@@ -8,6 +8,8 @@ import entity.Mui;
 import entity.Spiller;
 import sprog.Tekst;
 
+// Skatte feltet har to felter hvor det ene felt giver muligheden for indten at betale 4000 eller 10 % af ens balance
+// og det andet felt kræver en betaling på 2000
 public class Skat extends Felter {
 
 	Scanner scan = new Scanner(System.in);
@@ -17,12 +19,14 @@ public class Skat extends Felter {
 	
 	public Color farve = Color.YELLOW;
 
-
+// Kontruktør for Skat feltet, arver fra Felter
 	public Skat(String feltNavn,int skat, boolean skatprocent){
 		super(feltNavn);
 		this.skatprocent = skatprocent;
 		this.skat = skat;
 	}
+// Landpåfelt metoden er metoden der angiver alt der sker når en spiller lander på feltet
+// Er ikke lavet efter GRASP på grund af tidspress
 
 	public void landPaaFelt(Spiller spiller, Mui mui){
 		mui.midtBeskrivelse(Tekst.toString(71));
@@ -50,23 +54,27 @@ public class Skat extends Felter {
 
 	}
 
-	
+// Metode der trækker 10 % af en spillers balance fra hans balance
 	public void BetalTilProcent(Spiller spiller){
 		spiller.aendreBalance(-(spiller.getBalance()/skatprocenten));
 	}
-	
+// Metode der retunere beløbet som svare til 10 % af spillerens balance
 	public int getProcent (Spiller spiller){
 		int getProcent = spiller.getBalance()/skatprocenten;
 		return getProcent;
 	}
-	
+
+// Metode der trækker 'skat' variablen fra spillers balance
 	public void betalFeltPris (Spiller spiller){
 		spiller.aendreBalance(-skat);
 	}
+	
+// Metode der retunere skat
 	public int getPris(){
 		return skat;
 	}
 	
+// Subteksten bruges til guien
 	@Override
 	public String subtekst() {
 		
@@ -81,6 +89,7 @@ public class Skat extends Felter {
 		return subtekst;
 	}
 
+// getbeskrivelse bruges også til guien
 	@Override
 	public String getbeskrivelse() {
 		
@@ -95,6 +104,7 @@ public class Skat extends Felter {
 		return Tekst.toString(71) + Tekst.toString(74) + skat;
 	}
 	
+// getColor metode der retunere farven på feltet
 	@Override
 	public Color getColor() {
 		return farve;
