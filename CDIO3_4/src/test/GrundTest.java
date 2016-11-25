@@ -70,4 +70,7 @@ public class GrundTest {
 		Sp2Reel = this.spiller2.getBalance();
 		Assert.assertEquals(Sp2Expected, Sp2Reel);
 	}
+
 }
+
+
