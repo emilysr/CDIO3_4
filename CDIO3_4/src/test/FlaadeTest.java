@@ -60,10 +60,12 @@ public class FlaadeTest {
 		
 		this.flaade.koebFelt(spiller);
 		Sp1Expected -= this.flaade.getPris();
+		Sp1Reel = this.spiller.getBalance();
 		Assert.assertEquals(Sp1Expected, Sp1Reel);
 		
 		this.flaade.landPaaFelt(spiller2);
 		Sp2Expected -= this.flaade.getLeje();
+		Sp2Reel = this.spiller2.getBalance();
 		Assert.assertEquals(Sp2Expected, Sp2Reel);
 	}
 
@@ -77,14 +79,17 @@ public class FlaadeTest {
 		
 		this.flaade.koebFelt(spiller);
 		Sp1Expected -= this.flaade.getPris();
+		Sp1Reel = this.spiller.getBalance();
 		Assert.assertEquals(Sp1Expected, Sp1Reel);
 		
 		this.flaade2.koebFelt(spiller);
 		Sp1Expected -= this.flaade.getPris();
+		Sp1Reel = this.spiller.getBalance();
 		Assert.assertEquals(Sp1Expected, Sp1Reel);		
 		
 		this.flaade.landPaaFelt(spiller2);
 		Sp2Expected -= this.flaade.getLeje();
+		Sp2Reel = this.spiller2.getBalance();
 		Assert.assertEquals(Sp2Expected, Sp2Reel);
 	}
 
