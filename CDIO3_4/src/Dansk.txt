@@ -42,7 +42,7 @@ Start
 Stammelejr
 Krater
 Bjerg
-Kold oerken
+Kold ørken
 Sort grotte
 Vareulvemuren
 Bjerg landsbyen
@@ -60,7 +60,7 @@ Anden Sejl
 Havets Grover
 de Buccaneers
 Privateer armade
-100 x Terning slag x Spillerejet
+100 x Terning slag x Spillerejet = 
 4000 eller 10 % 
 2000 
 Type: Grund 
@@ -75,3 +75,9 @@ Skaten er
 Du modtog 
 Du har købt feltet
 Du valgte ikke at købe feltet
+Du landet på et Helle felt
+Modtag
+Du skal betale 2000 skat 
+Kast
+Kast med terningerne
+Vinder er: 
